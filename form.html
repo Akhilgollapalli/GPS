@@ -1,0 +1,49 @@
+    <html>
+    <head>
+<meta charset="UTF-8">
+<title>CODE BREAKERS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script>
+function showlocation() {
+	navigator.geolocation.getCurrentPosition(function(position) {
+		callback(position.coords.latitude, position.coords.longitude);
+	});
+}
+
+function callback(lat,lon) {
+document.getElementById('latitude1').value = lat;
+document.getElementById('longitude1').value = lon;
+
+}
+</script>
+</head>
+
+    </head>
+    <body background="2.jpg">
+    <center><br><br>
+    <fieldset length="400">
+    <legend><b>KNOW YOUR LOCATION</b></legend>
+<div>
+	<button type="submit" onclick="javascript:showlocation()">Show my location</button>
+</div>
+    <form method="post" action="connect.php" target=" ">
+    <table>
+    <tr>
+	<td>Latitude&nbsp;&nbsp;&nbsp;&nbsp;:</td><td><input type="text" id="latitude1" name="latitude1" value = ""></td>
+	</tr>
+	<tr>
+	<td>Longitude&nbsp;:</td><td><input type="text" id="longitude1" name="longitude1" value = ""></td>
+	</tr>
+	</table>
+	<br>
+    <font color="blue"><b>Username</b></font> <br><input type="text" name="username"><br><br>
+    <button type="submit">SAVE</button>
+    </form>
+    </fieldset>
+    </center>
+    </body>
+    </html>
